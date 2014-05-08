@@ -14,6 +14,7 @@ module MetaSearch
       end
 
       def build
+        binding.remote_pry
         params.each_pair do |field_query, value|
           field, query = field_query.to_s.scan(metasearch_regexp).first
           case query.to_sym
